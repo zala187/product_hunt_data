@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "product-api",
+  "main": "src/index.js",
+  "compatibility_date": "2025-11-11",
+  "observability": {
+    "enabled": true
+  },
+
+  "d1_databases": [
+    {
+      "binding": "products_db",
+      "database_name": "products_db",
+      "database_id": "0ef250a1-6efd-4e6a-a9d0-ac6d02c9b3e1"
+    }
+  ]
+}
