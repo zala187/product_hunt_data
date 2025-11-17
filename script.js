@@ -1,9 +1,11 @@
 async function loadProducts() {
   try {
-    const response = await fetch("https://producthunt-tracker.manishzala1718.workers.dev/products");
+    const response = await fetch("https://product-api.manishzala1718.workers.dev/monthly");
     const data = await response.json();
 
-    const tableBody = document.querySelector("#productTable tbody");
+    console.log("DATA LOADED:", data);
+
+    const tableBody = document.getElementById("productTable");
     tableBody.innerHTML = "";
 
     data.forEach((item,index) => {
@@ -13,7 +15,8 @@ async function loadProducts() {
           <td>${item.name}</td>
           <td>${item.description}</td>
           <td>${item.votes}</td>
-          <td><a href="${item.url}" id="url" target="_blank">Visit</a></td>
+          <td>${item.created_at}</td>
+          <td><a href="${item.url}" target="_blank">Visit</a></td>
         </tr>
       `;
       tableBody.innerHTML += row;
@@ -23,4 +26,4 @@ async function loadProducts() {
   }
 }
 
-loadProducts();
+document.addEventListener("DOMContentLoaded", loadProducts);
