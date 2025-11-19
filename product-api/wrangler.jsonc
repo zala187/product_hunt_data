@@ -1,30 +1,29 @@
 {
-    "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "product-api",
-    "main": "src/index.js",
-    "compatibility_date": "2025-11-11",
-
-    "observability": {
-        "enabled": true
-    },
-
-    "d1_databases": [
-        {
-            "binding": "products_db",
-            "database_name": "products_db",
-            "database_id": "49a92463-b938-41aa-ad5b-78cee1bc9d75"
-        }
-    ],
-
-    "kv_namespaces": [
-        {
-            "binding": "PRODUCTS_KV",
-            "id": "47e1c9a4090f4561a8814beb4f403528",
-            "preview_id":"29aca1768d63468081b9d947894592e3"
-        }
-    ],
-
-    "triggers": {
-        "crons": ["0 0 1 * *"]
-    }
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "product-api",
+	"main": "src/index.js",
+	"compatibility_date": "2025-11-11",
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "products_db",
+			"database_name": "products_db",
+			"database_id": "49a92463-b938-41aa-ad5b-78cee1bc9d75"
+		},
+		
+	],
+	"kv_namespaces": [
+		{
+			"binding": "KV",
+			"id": "2ca0be84e7564551bc6973ea6bd6ca19",
+			
+		}
+	],
+	"triggers": {
+		"crons": [
+			"0 0 1 * *"
+		]
+	}
 }
